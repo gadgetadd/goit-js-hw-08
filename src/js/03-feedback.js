@@ -23,6 +23,13 @@ const restoreForm = () => {
 const onFormSubmit = event => {
   event.preventDefault();
 
+  if (
+    event.target.elements.email.value === '' ||
+    event.target.elements.message.value === ''
+  ) {
+    return alert('Всі поля повинні бути заповнені!');
+  }
+
   const submitData = {};
   submitData.email = event.target.elements.email.value;
   submitData.message = event.target.elements.message.value;
